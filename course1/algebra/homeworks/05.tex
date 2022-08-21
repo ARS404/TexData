@@ -1,0 +1,48 @@
+\subsubsection{Пятое БДЗ}
+
+
+\i Сперва обозначим проивольную мартицу из $GL_2(\RR)$ за $G$ при этом $G$ будет иметь вид $\begin{bmatrix} a & b\\ 0&c \end{bmatrix};\ a,c \ne 0$.
+\par Теперь покажем, что для $G$ будем существовать ровно 3 орбиты.
+\begin{enumerate}
+    \item $G \left\{\begin{bmatrix}0\\0\end{bmatrix}\right\} = \left\{\begin{bmatrix}0\\0\end{bmatrix}\right\}$.\\
+    В этом случае эквивалентность очевидна.
+    \item $\left\{\begin{bmatrix}x\\0\end{bmatrix}\right\} = \left\{\begin{bmatrix}y\\0\end{bmatrix}\right\};\ x,y \ne 0.$\\
+    $G \begin{bmatrix}x\\0\end{bmatrix} = \brackets{G\begin{bmatrix}y&0\\0&y\end{bmatrix}} \begin{bmatrix}x\\0\end{bmatrix} = G\begin{bmatrix}y\\0\end{bmatrix}.$
+    \item $\left\{\begin{bmatrix}x\\y\end{bmatrix}\right\} = \left\{\begin{bmatrix}f\\g\end{bmatrix}\right\};\ x,g \ne 0.$\\
+    Для доказательства эквивалентности 2 элементов достаточно просто подобрать такую матрицу $X \in GL_2(\RR)$, что $X\begin{bmatrix}x\\y\end{bmatrix} = \begin{bmatrix}f\\g\end{bmatrix}$. Предстваим $X$ как $\begin{bmatrix} a&b\\0&c \end{bmatrix};\ a,c \ne 0$, тогда $f = cy$ и $g = ax+by$. Мы получили систему линейных уравнений для $a, b, c$, совсем нетрудно убедится, что она всегда имеет решенее. Таким образом мы доказали, что любые 2 элемента в рассмотренном множестве эквивалентны, а значит это орбита.
+\end{enumerate}
+Также расположенее нулей в столбцах в каждом варианте гарантирует нам, что рассмотренные подмножества не пересекаются.
+\par Теперь найдём $St\begin{bmatrix}1\\0\end{bmatrix}$ и $St\begin{bmatrix}1\\1\end{bmatrix}$
+\begin{itemize}
+    \item $\begin{bmatrix} a & b\\ 0&c \end{bmatrix}\begin{bmatrix}1\\0\end{bmatrix} = \begin{bmatrix}1\\0\end{bmatrix};\ a,c \ne 0 => a = 1 => St\begin{bmatrix}1\\0\end{bmatrix} = \begin{bmatrix}1&b\\0&c\end{bmatrix};\ c\ne 0$.
+    \item $\begin{bmatrix} a & b\\ 0&c \end{bmatrix}\begin{bmatrix}1\\1\end{bmatrix} = \begin{bmatrix}1\\1\end{bmatrix};\ a,c \ne 0 => a+b = 1;\ c = 1 => St\begin{bmatrix}1\\1\end{bmatrix} = \begin{bmatrix}a&1-a\\0&a\end{bmatrix};\ a \ne 0$.
+\end{itemize}
+
+
+\i Ну это совсем просто, давайте запишем определенее того, что элемент $g \in G$ лежит в центре неэффектовности: $\forall x \in G: gxg^{-1} = x$, что равностильно $\forall x \in G: gx = xg$, что по определению означает, что $g$ лежит в центре группы $G$. Что и требовалось доказать.
+
+
+\i Для поика искомого изморфизма нужно посмотреть действие $\ZZ_2 \xor \ZZ_3$ на саму себя левым сдвигом. Таким образом мы сможем понять, какие перестановки входят в образ нужного нам извоморфизма. Похоже, что делать больше нечего, давайте построим табличку.
+\begin{center}
+    \begin{tabular}{|c||c|c|c|c|c|c|}
+         \hline
+               & (0;0) & (0;1) & (0;2) & (1;0) & (1;1) & (1;2)\\
+         \hline \hline
+         (0;0) & (0;0) & (0;1) & (0;2) & (1;0) & (1;1) & (1;2)\\
+         \hline
+         (0;1) & (0;1) & (0;2) & (0;0) & (1;1) & (1;2) & (1;0)\\
+         \hline
+         (0;2) & (0;2) & (0;0) & (0;1) & (1;2) & (1;0) & (1;1)\\
+         \hline
+         (1;0) & (1;0) & (1;1) & (1;2) & (0;0) & (0;1) & (0;2)\\
+         \hline
+         (1;1) & (1;1) & (1;2) & (1;0) & (0;1) & (0;2) & (0;0)\\
+         \hline
+         (1;2) & (1;2) & (1;0) & (1;1) & (0;2) & (0;0) & (0;1)\\
+         \hline
+    \end{tabular}
+\end{center}
+Теперь мы знаем, что если занумеровать элементы в этой табличке (занумеруем их в том же порядке, в котором они идут в нулевой строке), то в строках с первой по шестую мы получим искомые перестановки, это будет множество $$\{id,\ (1,2,3)(4,5,6),\ (1,3,2)(4,6,5),\ (1,4)(2,5)(3,6),\ (1,5,3,4,2,6),\ (1,6,2,4,3,5)\}.$$
+
+\i Заметим, что результат сопряжения перестановки $\alpha$ перестановкой $\beta$ есть $$(\beta(\alpha_1), \beta(\alpha_2), \ldots, \beta(\alpha_{n-1})).$$
+Отсудам можно понять, что для $\beta \in St(\{1, 2, \ldots, n-1\})$ верно, что если $\beta(1) = x+1$, то $\beta(i) = x+i$ по модулю $n-1$. Отсуюда слудует, что для $\lambda = \{1, 2, \ldots, n-1\},\ St(\lambda) = \{\lambda^k \ | \ k \in \{0, 1, 2, \ldots, n-1\}\}$.

@@ -1,0 +1,87 @@
+\subsubsection{Пятое БДЗ}
+
+\setcounter{iii}{20}
+
+\i \textbf{3.}\\
+\pu
+\begin{gather*}
+    \limit{x}{0+0} \frac{\ln^2(\arctg x)}{\ctg x} = \limit{x}{0+0} \frac{\ln^2(\arctg x)\sin x}{\cos x} = \\
+    = \frac{\limit{x}{0+0} \ln^2(\arctg x)\sin x}{\limit{x}{0+0} \cos x} = \limit{x}{0+0} \ln^2(\arctg x) \sin x;
+    \intertext{так как при $x \seek 0$, $\ln^2(\arctg x)$ ограничена, а $\sin x$ стремится к нулю, то и их произведение также стремится к нулю.}
+    \limit{x}{0+0} \frac{\ln^2(\arctg x)} = \limit{x}{0+0} \ln^2(\arctg x) \sin x = 0.
+\end{gather*}
+\pu
+\begin{gather*}
+    \limit{x}{0+0} (\ln x)^{\arcsin x} = \limit{x}{0+0} \exp(\ln((\ln x)^{\arcsin x})) = \\ 
+    = \limit{x}{0+0} \exp(\arcsin x \ln(\ln x)) = \exp(\limit{x}{0+0} \arcsin x(\ln(\ln x))) = \\
+    = \exp\brackets{\limit{x}{0+0} \frac{\ln(\ln x)}{\frac{1}{\arcsin x}}};
+    \intertext{применим правило Лопиталя:}
+    = \exp\brackets{\limit{x}{0+0} \frac{(\ln(\ln x))\hatch}{\brackets{\frac{1}{\arcsin x}}\hatch}} = \exp\brackets{\limit{x}{0+0} \frac{\frac{1}{x\ln x}}{-\frac{1}{\sqrt{-x^2+1}\arcsin(x)^2}}} = \\
+    = \exp\brackets{\limit{x}{0+0} -\frac{\arcsin(x)^2\sqrt{-x^2+1}}{x\ln x}} = \exp\brackets{-1\brackets{\limit{x}{0+0} \sqrt{-x^2+1}}\brackets{\limit{x}{0+0} \frac{\arcsin(x)^2}{x \ln x}}} = \\
+    = \exp\brackets{-1\brackets{\limit{x}{0+0} \frac{\arcsin(x)^2}{x \ln x}}} = \exp\brackets{-\limit{x}{0+0}\frac{\arcsin(x)^2}{x} \cdot \limit{x}{0+0} \frac{1}{\ln x}} = \\
+    = \exp\brackets{-0 \limit{x}{0+0} \frac{\arcsin(x)^2}{x}};
+    \intertext{снова применим правило Лопиталя:}
+    = \exp\brackets{-0 \limit{x}{0+0} \frac{(\arcsin(x)^2)\hatch}{x\hatch}} = \exp\brackets{-0 \limit{x}{0+0} \frac{2\arcsin x}{\sqrt{-x^2+1}}} = \\
+    = \exp\brackets{-0 \cdot \frac{2\arcsin 0}{\sqrt{0 + 1}}} = \exp(-0 \cdot 0) = 1.
+\end{gather*}
+
+\i \textbf{8.}
+\begin{gather*}
+    \begin{cases}
+        x = \frac{\sin t}{1 + \cos t},\\
+        y = \frac{\cos t}{1 + \cos t},
+    \end{cases} \quad ,t = \frac{\pi}{4};\\
+    y\hatch(x) = \frac{y\hatch(t)}{x\hatch(t)} = \frac{\brackets{\frac{\sin t}{1 + \cos t}}\hatch}{\brackets{\frac{\cos t}{1 + \cos t}}\hatch}.\\
+    \brackets{\frac{\sin t}{1 + \cos t}}\hatch = \frac{(1 + \cos t)(\sin t)\hatch - (1 + \cos t)\hatch\sin t}{(1+\cos t)^2} = \frac{\cos t + \cos^2 t + \sin^2 t}{(1 + \cos t)^2}.\\
+    \brackets{\frac{\cos t}{1 + \cos t}}\hatch = \frac{(1 + \cos t)(\cos t)\hatch - (1 + \cos t)\hatch\cos t}{(1 + \cos t)^2} = - \frac{\sin t}{(1 + \cos t)^2}.\\
+    y\hatch(x) = \frac{y\hatch(t)}{x\hatch(t)} = \frac{\brackets{\frac{\sin t}{1 + \cos t}}\hatch}{\brackets{\frac{\cos t}{1 + \cos t}}\hatch} = \frac{- \frac{\sin t}{(1 + \cos t)^2}}{\frac{\cos t + \cos^2 t + \sin^2 t}{(1 + \cos t)^2}} = -\frac{\sin t}{\cos t + \cos^2 t + \sin^2 t}.
+    \intertext{При $t = \frac{\pi}{4}$:}
+    y\hatch(\frac{\pi}{4}) = - \frac{\sin \frac{\pi}{4}}{\cos \frac{\pi}{4} + \cos^2 \frac{\pi}{4} + \sin^2 \frac{\pi}{4}} = -\frac{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}} + \frac{1}{2} + \frac{1}{2}} = 1 - \sqrt{2}.
+    \intertext{Заметим, что полученное число является тангенсом угла касательной к графику $y(x)$ в точке $(x(\frac{\pi}{4}), y(\frac{\pi}{4})) = (\sqrt{2}-1, \sqrt{2}-1)$ Тогда уравнение касательной имеет вид $\sqrt{2} - 1 + (1-\sqrt{2})(x - \sqrt{2} + 1)$, а перпендикуляр к ней через точку$(0, 0)$ задаётся уравнением $x \cdot \frac{11}{1-\sqrt{2}} = x(1+\sqrt{2})$. Коодрината точки пересечения по оси абцисс равна решению уравнения $\sqrt{2} - 1 + (1-\sqrt{2})(x - \sqrt{2} + 1) = x(1+\sqrt{2})$, то есть обцисса точки пересечения равна $\frac{\sqrt{2}-1}{2}$, тогда ордината равна $\frac{1}{2}$.} 
+\end{gather*}
+
+\i \textbf{6.}
+\begin{gather*}
+    \begin{cases}
+        x = \ln(1+t^2),\\
+        y = t + \arctg t;
+    \end{cases}\\
+    \frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}} = \frac{\frac{2t}{1+t^2}}{1 + \frac{1}{1 + t^2}} = \frac{2t}{2+t^2};\\
+    \frac{d^2y}{dx^2} = (1+\arctg t)\hatch\hatch\ln(t^2+1) = -\frac{2t}{(1+t^2)^2}\cdot\ln(1+t^2).
+\end{gather*}
+
+\i \textbf{2.}
+\begin{gather*}
+    e^{x-2} + xy - 3y - 2 = 0, \quad x \ne 3\\
+    y(x) = \frac{2e^2 - e^x}{e^2(x-3)};\\
+    y\hatch(x) = \frac{-(2e^2-e^x)(x-3)\hatch - (x-3)e^x}{e^2(x-3)^2} = \frac{-2e^2 +e^x(x-4)}{e^2(x-3)^2}.\\
+    y\hatch\hatch(x) = \brackets{y\hatch(x)}\hatch = \brackets{\frac{-2e^2 +e^x(x-4)}{e^2(x-3)^2}}\hatch = \frac{2(2e^2-e^x)}{e^2(x-3)^2} - \frac{e^{x-2}}{x-3} + \frac{2e^{x-2}}{(x-3)^2}.
+    \intertext{При заданных координатах:}
+    y\hatch(x_0) = \frac{-2e^2 - 2e^2}{e^2} = -4.\\
+    y\hatch\hatch(x_0) = 2 + 1 + 2 = 5.
+\end{gather*}
+
+\i \textbf{5.}
+\begin{gather*}
+    f(x) = \sin^2 x(2x + 3) = \frac{(1 + \cos(2x))  (2x+3)}{2};\\
+    f\hatch(x) = (1 + \cos(2x)) - (2x+3)\sin(2x);\\
+    f\hatch\hatch(x) = 2(-2\sin(2x) - (2x+3)\cos(2x));\\
+    f\hatch\hatch\hatch(x) = 4((2x+3)\sin(2x) - 3\cos(2x));\\
+    f^{IV} = 8(4\sin(2x) + (2x+3)\cos(2x));\\
+    f^{V} = 16(-(2x+3)\sin(2x) + 5\cos(2x));
+    \intertext{Далее давайте по индукции доказывать, что производная $n$-ной степени (при $n > 1$, $n=1$ расписана отдельно) имеет следующий вид в зависимости от остатка $n$ при делении на 4:}
+\end{gather*}
+\begin{enumerate}
+    \item $n \modeq{4} 0 => f^{(n)} = 2^{n-1}(n\sin(2x) + (2x+3)\cos(2x))$;
+    \item $n \modeq{4} 1 => f^{(n)} = 2^{n-1}(-(2x+3)\sin(2x) + n\cos(2x))$;
+    \item $n \modeq{4} 2 => f^{(n)} = 2^{n-1}(-n\sin(2x) - (2x+3)\cos(2x))$;
+    \item $n \modeq{4} 3 => f^{(n)} = 2^{n-1}((2x+3)\sin(2x) - n\cos(2x))$;
+\end{enumerate}
+Осталось показать 4 варианта перехода:
+\begin{enumerate}
+    \item $\letus n \modeq{4} 0 => \brackets{f^{(n)}}\hatch = \brackets{2^{n-1}(n\sin(2x) + (2x+3)\cos(2x))}\hatch = 2^n(-(2x+3)\sin(2x) + (n+1)\cos(2x))$ "--- всё ок;
+    \item $\letus n \modeq{4} 1 => \brackets{f^{(n)}}\hatch = \brackets{2^{n-1}(-(2x+3)\sin(2x) + n\cos(2x))}\hatch = 2^{n}(-(n+1)\sin(2x) - (2x+3)\cos(2x))$ "--- всё ок;
+    \item $\letus n \modeq{4} 2 => \brackets{f^{(n)}}\hatch = \brackets{2^{n-1}(-n\sin(2x) - (2x+3)\cos(2x))}\hatch = 2^n((2x+3)\sin(2x) - (n+1)\cos(2x))$ "--- всё ок;
+    \item $\letus n \modeq{4} 3 => \brackets{f^{(n)}}\hatch = \brackets{2^{n-1}((2x+3)\sin(2x) - n\cos(2x))}\hatch = 2^n((n+1)\sin(2x) + (2x+3)\cos(2x))$ "--- всё ок.
+\end{enumerate}
+Таким образом мы совершили переход, а значит доказали формулу представления $n$-ной производной данной функции для произвольного $n$.

@@ -1,0 +1,155 @@
+\ProvidesPackage{commands}
+
+\newcommand{\MatrixDim}[2]{\operatorname{M}_{#1\,#2}(\mathbb R)}
+\newcommand{\Matrix}[1]{\operatorname{M}_{#1}(\mathbb R)}
+\newcommand{\Vector}[1]{\mathbb R^{#1}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\Sym}[1]{\operatorname{S}_{#1}}
+\newcommand{\Identity}{\operatorname{Id}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\dec}{\operatorname{dec}}
+\newcommand{\rk}{\operatorname{rk}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\height}{\operatorname{ht}}
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\Bil}{\operatorname{Bil}}
+\newcommand{\SBil}{\operatorname{SBil}}
+\newcommand{\ABil}{\operatorname{ABil}}
+\newcommand{\Quad}{\operatorname{Quad}}
+\newcommand{\pr}{\operatorname{pr}}
+\newcommand{\ort}{\operatorname{ort}}
+\newcommand{\Vol}{\operatorname{Vol}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+
+
+% --- символ "пусть"
+%-----------------------------------------------
+\def\letus{\mathord{\setbox0=\hbox{$\exists$}%
+    \hbox{\kern 0.125\wd0%
+    \vbox to \ht0{%
+      \hrule width 0.75\wd0%
+      \vfill%
+      \hrule width 0.75\wd0}%
+    \vrule height \ht0%
+    \kern 0.125\wd0}%
+}\, }
+%-----------------------------------------------
+
+
+% --- добавление симвода "кратно"
+%-----------------------------------------------
+\newcommand{\divby}{\mathbin{\vdots}}
+\newcommand{\notdivby}{\not\vdots \ }
+%-----------------------------------------------
+
+
+% --- добавление определения
+%-----------------------------------------------
+\newcommand{\define}[0]{\textbf{\underline{Определение.} }}
+%-----------------------------------------------
+% --- добавление леммы
+%-----------------------------------------------
+\newcommand{\lem}[1]{\textbf{\underline{Лемма #1}.}}
+%-----------------------------------------------
+% --- добавление доказательства
+%-----------------------------------------------
+% \newcommand{\proof}[0]{\textbf{\underline{Доказательство.} }}
+%-----------------------------------------------
+% --- добавление условия
+%-----------------------------------------------
+\newcommand{\task}[0]{\textbf{\underline{Условие.} }}
+%-----------------------------------------------
+% --- добавление решения
+%-----------------------------------------------
+\newcommand{\solution}[0]{\textbf{\underline{Решение.} }}
+%-----------------------------------------------
+% --- добавление скобок
+%-----------------------------------------------
+\newcommand{\brackets}[1]{\left(#1\right)}
+%-----------------------------------------------
+% --- добавление модуля
+%-----------------------------------------------
+\newcommand{\abs}[1]{\left|#1\right|}
+%-----------------------------------------------
+% --- добавление сравнения по модулю
+%-----------------------------------------------
+\newcommand{\modeq}[1]{\ \substack{\equiv \\ #1} \ }
+%-----------------------------------------------
+
+\newcommand{\RR}[0]{\mathds{R}}
+\newcommand{\QQ}[0]{\mathds{Q}}
+\newcommand{\CC}[0]{\mathds{C}}
+\newcommand{\ZZ}[0]{\mathds{Z}}
+\newcommand{\NN}[0]{\mathds{N}}
+
+\newcommand{\xor}[0]{\, \oplus \, }
+
+\newcommand{\seek}[0]{\mapsto}
+
+\newcommand{\limit}[2]{\lim_{#1 \seek #2}}
+
+\newcommand{\hatch}[0]{{^\prime}}
+
+\newcommand{\oo}[0]{\overline{o}}
+
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\roof}[1]{\lceil #1 \rceil}
+
+\newcommand{\lnabs}[1]{\ln\abs{#1}}
+
+
+% --- хз, что это такое :/
+%-----------------------------------------------
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+%-----------------------------------------------
+
+
+\newcommand{\head}[2] {%\vspace*{-25pt} \centerline{\bf \LARGE #1 }}
+    \begin{center}
+        \bf\LARGE #1
+        \medskip
+        \large #2
+    \end{center}
+}
+
+\newcommand{\subhead}[1]{
+    \begin{center}
+        \bf\large #1
+    \end{center}
+}
+
+\newcommand{\makeFit}[0]{
+	\pagestyle{fancy}
+	\fancyhf{}
+	\chead{HSE 21-22 $\bullet$ Homeworks}
+	\rhead{\large\thepage\hspace{15pt}}
+	\renewcommand{\headrulewidth}{0.4pt}
+}
+
+\newcommand{\render}[1]{
+	\setcounter{iii}{0}
+	\makeFit
+	\include{#1}
+}
+
+\renewcommand\ge{\geqslant}
+\renewcommand\le{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+\newcommand{\comp}[0]{{\circ}}
+
+\newcommand{\coolMatrix}[2]{\brackets{
+    \left. \begin{matrix}
+        #1  
+    \end{matrix} \right|
+    \begin{matrix}
+        #2
+    \end{matrix}
+}}

@@ -1,0 +1,94 @@
+\subsubsection{Четвёртое БДЗ}
+
+
+\setcounter{iii}{15}
+
+\i \textbf{(4).}
+\begin{gather*}
+    \frac{1}{e^{(x^2+2x)(x+3)^2}};
+    \intertext{Заметим, что наша функция имеет вид <<константа делить на непрерывную функцию>>, а значит может быть разрывна только в тех точках, в которых знаменатель равен или стремится к нулю:}
+    \begin{cases}
+        e^{(x^2+2x)(x+3)^2} = 0, & \text{очевидно, не имеет решений,}\\
+        \limit{x}{x_0} e^{(x^2+2x)(x+3)^2} = 0, & \text{рассмотрим отдельно;}
+    \end{cases}\\
+    \limit{x}{x_0} e^{(x^2+2x)(x+3)^2} = 0 <=> \limit{x}{x_0} (x^2+2x)(x+3)^2 = -\infty;\\
+    \limit{x}{x_0} (x^2+2x)(x+3)^2 = -\infty;
+\end{gather*} 
+не имеет решений в силу того, что рассматриваетмая функция является многочленом чётной степени, а значит ни в какой точке не стемится к $-\infty$.
+Таким образом, данная функция является непрерывной на всей числовой оси.\\
+Эскиз графика:\\
+\input{course1/calculus/homeworks/some data/04.16.a}
+\input{course1/calculus/homeworks/some data/04.16.b}
+
+\i \textbf{(4).}
+\begin{gather*}
+    f(x) = e^x\sin3x;\\
+    f\hatch(x) = (e^x)\hatch\sin3x + e^x(\sin3x)\hatch = \limit{x}{x_0} \frac{\sin3x(e^x-e^{x_0}) + 3e^x(\sin3x - \sin3x_0)}{x-x_0};\\
+    \limit{x}{x_0} \frac{\sin3x(e^x-e^{x_0}) + 3e^x(\sin3x - \sin3x_0)}{x-x_0} = \limit{x}{x_0} \sin3x\frac{e^x - e^{x_0}}{x-x_0} + \limit{x}{x_0} 3e^x\frac{\sin3x - \sin3x_0}{x-x_0} = \\
+    = \limit{x}{x_0}e^{x_0}\sin3x\frac{e^{x-x_0} - 1}{x-x_0} + \limit{x}{x_0} 3e^x\frac{\sin3x - \sin3x_0}{x-x_0} \sim \\
+    \sim e^x\sin3x + 3e^x\limit{x}{x_0}\frac{\sin3x - \sin3x_0}{x-x_0} = e^x\sin3x + 3e^x\limit{x}{x_0}\frac{2\sin\frac{3x-3x_0}{2}\cos\frac{3x+3x_0}{2}}{x-x_0} \sim \\
+    \sim e^x\sin3x + 3e^x\cos3x = e^x(\sin3x + 3\cos3x)
+\end{gather*}
+
+\i \textbf{(2).}
+\begin{gather*}
+    f(x) = 
+    \begin{cases}
+        x^4\cos(\frac{1}{x^2}), &x \ne 0,\\
+        0, &x = 0.
+    \end{cases}\\
+    \text{При } x \ne 0: \quad f\hatch(x) = 4x^3\cos(\frac{1}{x^2}) + x^4(\cos(\frac{1}{x^2}))\hatch =\\
+    = 4x^3\cos\frac{1}{x^2} - \sin\frac{1}{x^2}(\frac{1}{x^2})\hatch x^4 = 4x^3\cos\frac{1}{x^2} + 2x\sin\frac{1}{x^2}.
+    \intertext{Легко убедиться, что полученная функция является непрерывной для всех $x\ne0$, так как она выражается как сумма и произведение непрерывных функций.
+    Осталось только посчитать производную при $x=0$. Сделаем это по определению.}
+    f\hatch(0) = \limit{x}{0}\frac{f(x) - 0}{x - 0} = \limit{x}{0} x^3\cos(\frac{1}{x^2}).
+    \intertext{В силу того, что $\abs{\cos\frac{1}{x^2}} \leq 1$ верно, что}
+    \limit{x}{0} x^3\cos(\frac{1}{x^2}) = 0.
+\end{gather*}
+Осталось определить, верно ли, что $\limit{x}{0} f\hatch(x) = 0:$
+\begin{gather*}
+    \limit{x}{0} 4x^3\cos\frac{1}{x^2} + 2x\sin\frac{1}{x^2} = \limit{x}{0} 2x(2x^2\cos\frac{1}{x^2}+\sin\frac{1}{x^2});
+\end{gather*}
+Тут мы можем аналогично ограничить часть в скобках "--- $\abs{2x^2\cos\frac{1}{x^2}+\sin\frac{1}{x^2}} \leq \abs{2x^2\cos\frac{1}{x^2}} + \abs{\sin\frac{1}{x^2}}$, а при $x \seek 0$ "--- $\abs{2x^2\cos\frac{1}{x^2}} + \abs{\sin\frac{1}{x^2}} \leq \abs{\cos\frac{1}{x^2}} + \abs{\sin\frac{1}{x^2}} \leq 2$. Следовательно $\limit{x}{0} f\hatch(x) = 0$.\\
+Таким образом, из определение неприрывности по Гейне, производная $f(x)$ непрерывна при всех $\RR$.
+
+\i \textbf{(1).}
+\begin{gather*}
+    y = \arccos\frac{1}{\sqrt{1+2x^2}};\\
+    \frac{dy}{dx} = f\hatch(x) => dy = f\hatch(x) \cdot dx.\\
+    \letus u = \frac{1}{\sqrt{1+2x^2}}:
+    f\hatch(x) = \frac{d\arccos(u)}{du} \cdot \frac{du}{dx} = \frac{\frac{d}{dx}\brackets{\frac{1}{\sqrt{1+2x^2}}}}{\sqrt{1-\frac{1}{1+2x^2}}} = \\
+    = -\frac{1}{\sqrt{1 - \frac{1}{1+2x^2}}}\brackets{-\frac{\frac{d}{dx}(1+2x^2)}{2(1+2x^2)^{3/2}}} = \frac{\frac{d}{dx}(1+2x^2)}{2(1+2x^2)^{3/2}\sqrt{1-\frac{1}{1+2x^2}}} = \\
+    = \frac{\frac{d}{dx}1 + \frac{d}{dx}(2x^2)}{2(1+2x^2)^{3/2}\sqrt{1-\frac{1}{1+2x^2}}} = \frac{0 + 2x }{(1+2x^2)^{3/2}\sqrt{1-\frac{1}{1+2x^2}}} = \\
+    = 2x\frac{1}{(1+2x)^{3/2}\sqrt{1 - \frac{1}{1+2x^2}}} => dy = 2x\frac{1}{(1+2x)^{3/2}\sqrt{1 - \frac{1}{1+2x^2}}} \cdot dx.
+\end{gather*}
+
+\i \textbf{(9).}
+\begin{gather*}
+    f(x) = \sqrt[4]{\frac{e^{\tg x}(x^4+1)}{x\cos x}}, \quad
+    g(x) = (\cos x)^{\sqrt{x}}.
+\end{gather*}
+\pu
+\begin{gather*}
+    \frac{d}{dx}f(x) = \frac{d\sqrt[4]{\frac{(x^4+1)e^{\tg x}\sec x}{x}}}{d\frac{(x^4+1)e^{\tg x}\sec x}{x}} \cdot \frac{d\frac{(x^4+1)e^{\tg x}\sec x}{x}}{dx} = \\
+     = \frac{\frac{d}{dx}\brackets{\frac{e^{\tg x}(x^4+1)\sec x}{x}}}{4\brackets{\frac{(x^4+1)e^{\tg x}\sec x}{x}}^{3/4}} = 
+    \frac{1}{4\brackets{\frac{(x^4+1)e^{\tg x}\sec x}{x}}^{3/4}} = \\
+    = \frac{\brackets{-e^{\tg x}(1+x^4)\brackets{\frac{d}{dx}x}\sec x + x \brackets{e^{\tg x}\brackets{\frac{d}{dx}((1+x^4)\sec x)} + (1+x^4)\brackets{\frac{d}{dx}(e^{\tg x}}\sec x}}} {4x^2\brackets{\frac{e^{\tg x}(1+x^4)\sec x}{x}}^{3/4}} = \\
+    = \frac{-e^{\tg x}(1+x^4)\sec(x) + x(e^{\tg x}((1+x^4)(\frac{d}{dx}\sec x) + (\frac{d}{dx}(1+x^4)\sec x) + e^{\tg x}(\frac{d}{dx}\tg x)(1+x^4)\sec x))} {4x^2\brackets{\frac{e^{\tg x}(1+x^4)\sec x}{x}}^{3/4}} = \\
+    = \frac{-e^{\tg x}(1+x^4)\sec x + x(e^{\tg x}((1+x^4)(\frac{d}{dx}\sec x) + \frac{d}{dx}(1+x^4)\sec x + \sec^2(x) e^{\tg x}(1+x^4)\sec x))} {4x^2\brackets{\frac{e^{\tg x}(1+x^4)\sec x}{x}}^{3/4}} = \\
+    = \frac{-e^{\tg x}(1+x^4)\sec x + x(e^{\tg x}(1+x^4)\sec^3x + e^{\tg x}((1+x^4)\frac{d}{dx}\sec x + (\frac{d}{dx}(1+x^4))\sec x))} {4x^2\brackets{\frac{e^{\tg x}(1+x^4)\sec x}{x}}^{3/4}} = \\
+    = \frac{-e^{\tg x}(1+x^4)]sec x + x(e^{\tg x} ((\frac{d}{dx}(1+x^4))\sec x + (1+x^4)(\frac{d}{dx}x)\sec x \tg x))} {4x^2\brackets{\frac{e^{\tg x}(1+x^4)\sec x}{x}}^{3/4}} = \\
+    = \frac{-e^{\tg x}(1+x^4)\sec x + x(e^{\tg x}(1+x^4)\sec^3 x + e^{\tg x}(4x^3\sec x + (1+x^4)\sec x \tg x))} {4x^2\brackets{\frac{e^{\tg x}(1+x^4)\sec x}{x}}^{3/4}}
+\end{gather*}
+\pu
+\begin{gather*}
+    \ln(g(x)) = \sqrt{x}\ln(\cos x);\\
+    \frac{d}{dx}\ln(g(x)) = \frac{d}{dx}\sqrt{x}\ln(\cos x);\\
+    \frac{d}{dx}\sqrt{x}\ln(\cos x) = \frac{d\ln(g(x))}{dg(x)}\cdot\frac{dg(x)}{dx};\\
+    \frac{\frac{d}{dx}g(x)}{g(x)} = \frac{d}{dx}\sqrt{x}\ln(\cos x);\\
+    \frac{\brackets{\frac{d}{dx}}g\hatch(x)}{g(x)} = \frac{d}{dx}\sqrt{x}\ln(\cos x);\\
+    \frac{g\hatch(x)}{g(x)} = \frac{d}{dx}\sqrt{x}\ln(\cos x);\\
+    \frac{g\hatch(x)}{g(x)} = \brackets{\ln(\cos x)\brackets{\frac{d}{dx}\sqrt{x}} + \sqrt{x}\brackets{\frac{d}{dx}\ln(\cos x)}};\\
+    \frac{g\hatch(x)}{g(x)} = \frac{\ln(\cos x)}{2\sqrt{x}} - \sqrt{x}\brackets{\frac{d}{dx}x}\tg x;\\
+    g\hatch(x) = (\cos x)^{\sqrt{x}}\brackets{\frac{\ln(\cos x)}{2\sqrt{x}} - \sqrt{x}\tg x}.
+\end{gather*}

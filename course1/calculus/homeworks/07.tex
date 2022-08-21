@@ -1,0 +1,107 @@
+\subsubsection{Седьмое БДЗ}
+
+\setcounter{iii}{5}
+
+\i \textbf{8}
+\begin{gather*}
+    \int \frac{2^{\sqrt{\ln(3x+5)}}}{(3x+5)\sqrt{\ln(3x+5)}}dx;\\
+    \letus t = \sqrt{\ln(3x+5)}:\\
+    \int \frac{2^t}{e^{t^2}t}d\frac{e^{t^2}-5}{3} = 
+    \int \frac{2^t}{e^{t^2}t}\cdot \frac{e^{t^2}2t}{3} dt =
+    \int \frac{2^{t+1}}{3} dt = 
+    \frac{2^{t+1}}{\ln 8} + C;\\
+    \frac{2^{\sqrt{\ln(3x+5)}}+1}{\ln 8} + C.
+\end{gather*}
+
+\i \textbf{1}\\
+\pu 
+\begin{gather*}
+    \int \frac{dx}{x-5\sqrt[4]{x}};\\
+    \letus t = \sqrt[4]{x},\ dt = \frac{1}{4x^{3/4}}dx:\\
+    4 \int \frac{t^3}{t^4 - 5t}dt = 4\int \frac{t^2}{t^3 - 5}dt;\\
+    \letus u = t^3-5,\ du = 3t^2 dt:\\
+    \frac{4}{3} \int \frac{1}{u} du = \frac{4}{3} \ln(\abs{u}) + C;\\
+    \frac{4}{3} \ln(\abs{t^3-5}) + C = \frac{4}{3} \ln(\abs{x^{3/4}-5}) + C.
+\end{gather*}
+\pu 
+\begin{gather*}
+    \int \frac{dx}{x^2\sqrt{16-x^2}};\\
+    \letus x = 4\sin(t),\ dx = 4\cos(t):\\
+    4 \int \frac{\csc^2(t)}{64}dt = \frac{1}{16} \int \csc^2(t) dt = -\frac{\cot(t)}{16} + C;\\
+    t = \arcsin(\frac{x}{4}):\\
+    \frac{\sqrt{16-x^2}}{16x} + C.
+\end{gather*}
+
+\i \textbf{0}
+\pu
+\begin{gather*}
+    \int x\arctg(x)dx;\\
+    \int f dg = fg - \int g df\ with\ f=\arctg(x),\ g = \frac{x^2}{2},\ dg = xdx,\ df = \frac{1}{x^2+1}dx:\\
+    \frac{1}{2}x^2\arctg(x) - \frac{1}{2}\int \frac{x^2}{x^2+1}dx = \frac{1}{2}x^2\arctg(x) - \frac{1}{2}\int \brackets{1 - \frac{1}{x^2+1}}dx;\\
+    \frac{1}{2}\brackets{x^2\arctg x + \int \frac{1}{x^2 + 1}dx - \int 1dx} = \frac{1}{2}\brackets{x^2\arctg x - x + \arctg x} + C;\\
+    \frac{1}{2}\brackets{(x^2+1)\arctg(x) - x} + C.
+\end{gather*}
+\pu
+\begin{gather*}
+    \int (x^2-4x+3)\sin(2x)dx;\\
+    \int x^2\sin(2x)dx - 4\int x\sin(2x)dx + 3\int \sin(2x)dx;\\
+    \int fdg = fg - \int gdf\ with\ f = x^2,\ g = -\frac{1}{2}\cos(2x),\ dg = \sin(2x)dx,\ df = 2xdx:\\
+    \frac{1}{2}x^2\cos(2x) + \int x\cos(2x)dx - 4\int x\sin(2x)dx + 3\int \sin(2x)dx;\\
+    \int fdg = fg - \int gdf\ with\ f = x,\ g = \frac{1}{2}\sin(2x),\ dg = \cos(2x)dx,\ df = dx:\\
+    -\frac{1}{2}x^2\cos(2x) + \frac{1}{2}x\sin(2x) + \frac{5}{2}\int \sin(2x)dx - 4\int x\sin(2x)dx;\\
+    \letus t = 2x,\ dt = 2dx:\\
+    -\frac{1}{2}x^2\cos(2x) + \frac{1}{2}x\sin(2x) + \frac{5}{4}\int \sin(t)dt - 4\int x\sin(2x)dx = \\
+    = -\frac{5}{4}\cos(2x) - \frac{1}{2}x^2\cos(2x) + \frac{1}{2}x\sin(2x) - 4\int x\sin(2x)dx;\\
+    \int fdg = fg - \int gdf\ with\ f = x,\ g = -\frac{1}{2}\cos(2x),\ df = dx,\ dg = \sin(2x)dx:\\
+    -\frac{5}{4}\cos(2x) + 2x\cos(2x) - \frac{1}{2}x^2\cos(2x) + \frac{1}{2}x\sin(2x) - 2\int \cos(2x)dx;\\
+    \letus s = 2x,\ ds = 2dx:\\
+    -\frac{5}{4}\cos(2x) + 2x\cos(2x) - \frac{1}{2}x^2\cos(2x) + \frac{1}{2}x\sin(2x) - \int \cos(s)ds = \\
+    = -\sin(2x) - \frac{5}{4}\cos(2x) - \frac{1}{2}x^2\cos(2x) + \frac{1}{2}x\sin(2x) + 2x\cos(2x) + C;
+\end{gather*}
+\pu
+\begin{gather*}
+    \int e^{-3x}\cos(x) dx;\\
+    \int fdg = fg - \int gdf\ with\ f = \sin(x),\ g = -\frac{1}{3}e^{-3x},\ df = \cos(x)dx,\ dg = e^{-3x}dx:\\
+    \frac{1}{9}e^{-3x}\sin(x) - \frac{1}{3}e^{-3x}\cos(x) - \frac{1}{9}\int e^{3x}\cos(x)dx = \\
+    =  \frac{1}{9}e^{-3x}\sin(x) - \frac{1}{3}e^{-3x}\cos(x) - \frac{1}{3} e^{3x}\cos(x)dx + C = \\
+    = \frac{9}{10}\brackets{\frac{1}{9}e^{-3x}\sin(x) - \frac{1}{3}e^{-3x}\cos(x)} + C = \\
+    = \frac{1}{10}e^{3x}(\sin(x) - 3\cos(x)).
+\end{gather*}
+\i \textbf{8}
+\pu
+\begin{gather*}
+    \int \frac{4x-1}{x^2 + 2x + 17}dx;\\
+    2\int \frac{2x+2}{x^2 + 2x + 17}dx - 5\int \frac{1}{x^2 + 2x + 17}dx;\\
+    \letus t = x^2 + 2x + 17,\ dt = (2x+2) dx:\\
+    2\int \frac{1}{t}dt - 5\int \frac{1}{x^2 + 2x+ 17}dx = 2\ln(\abs{t}) - 5\int \frac{1}{x^2 + 2x + 17}dx =\\
+    = 2\ln(\abs{x^2 + 2x+2}) - 5\int\frac{1}{x^2 + 2x + 17}dx; + C\\
+    \letus s = (x+1),\ ds = dx:\\
+    2\ln(\abs{x^2 + 2x+2}) - 5\int \frac{1}{s^2 + 16}ds + C = 2\ln(x^2 + 2x+2) - \frac{5}{16}\int \frac{1}{\frac{s^2}{16} + 1}ds + C;\\
+    \letus p = \frac{s}{4},\ dp = \frac{1}{4}ds:\\
+    2\ln(\abs{x^2 + 2x+2}) - \frac{5}{4}\int \frac{1}{p^2 + 1}dp = 2\ln(x^2 + 2x+2) - \frac{5}{4}\arctan(p) + C = \\ 
+    2\ln(\abs{x^2 + 2x+2}) - \frac{5}{4}\arctan(\frac{s}{4}) + C = \\
+    = 2\ln(\abs{x^2 + 2x + 17}) - \frac{5}{4}\arctan(\frac{x+1}{4}) + C.
+\end{gather*}
+\pu
+\begin{gather*}
+    \int \frac{3x - 1}{x^2 + 6x + 5}dx;\\
+    \frac{3}{2}\int \frac{2x+6}{x^2 + 6x + 5}dx - 10\int \frac{1}{x^2 + 6x + 5}dx;\\
+    \letus t = x^2 + 6x + 5,\ dt = (2x+6)dx:\\
+    \frac{3}{2}\int \frac{1}{t}dt - 10\int \frac{1}{x^2 + 6x + 5}dx = \frac{3\ln(\abs{t})}{2} - 10\int \frac{1}{x^2 + 6x + 5} + C;\\
+    \letus s = x + 3,\ ds = dx:\\
+    \frac{3\ln(\abs{t})}{2} - 10\int \frac{1}{s^2 - 4}ds + C = \frac{3\ln(t)}{2} - 10\int -\frac{1}{3\brackets{1-\frac{s^2}{4}}}ds + C;\\
+    \letus p = \frac{s}{2},\ dp = \frac{1}{2}ds:\\
+    \frac{3\ln(\abs{t})}{2} + 5\int \frac{1}{1-p^2}dp + C = 5\arctan(p) + \frac{3\ln(\abs{t})}{2} + C = \\
+    = 4\ln(\abs{x+5}) - \ln(\abs{x+1}) + C.
+\end{gather*}
+
+\i \textbf{6}
+\begin{gather*}
+    \int \frac{2x^4-x^3-x^2+6x+3}{x^3-5x^2+6x}dx;\\
+    \int\brackets{2x + \frac{49}{x-3} - \frac{35}{2(x-2)} + \frac{1}{2x} + 9}dx = \\
+    = 2\int xdx + \frac{1}{2}\int \frac{1}{x}dx + \frac{35}{2}\int \frac{1}{x-2}dx + 49\int \frac{1}{x-3}dx + 9\int 1dx = \\
+    = x^2 + \frac{\ln(\abs{x})}{2} + 9x - \frac{35}{2}\int \frac{1}{x-2}dx + 49\int \frac{1}{x-3} + C;\\
+    \letus t = x-2,\ dt = dx,\ s = x-3,\ ds = dx:\\
+    x^2 + \frac{\ln(\abs{x})}{2} + 9x - \frac{35}{2}\frac{1}{t}dt + 49\int \frac{1}{s}ds + C = \\
+    = x^2 + 9x + \frac{\ln(\abs{x})}{2} - \frac{35\ln(\abs{x-2})}{2} + 49\ln(\abs{x-3}) + C.
+\end{gather*}

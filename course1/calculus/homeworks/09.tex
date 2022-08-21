@@ -1,0 +1,57 @@
+\subsubsection{Девятое БДЗ}
+
+\setcounter{iii}{15}
+
+\i \textbf{(4).}
+\begin{gather*}
+    \limit{n}{\infty} \brackets{\frac{\ln(n+1) + \ln(n+2) + \ldots + \ln(n + n)}{n} - \ln(n)} = \\ = \limit{n}{\infty}\brackets{\frac{\ln{\frac{n+1}{n}} + \ln{\frac{n+2}{n}} + \ldots + \ln{\frac{2n}{n}}}{n}} \substack{(1) \\ =} \int_1^2 \ln(x)dx = \bigg|_1^2 x(\ln(x) - 1) = \\ = \ln(4) - 1.
+\end{gather*}
+(1) Тут мы рассматриваем разбиение отрезка от 1 до 2 на $n$ равных частей (то есть по $\frac{1}{n}$ каждая) со значениями функции в правой границе каждого отрезка.
+
+\i \textbf{(4).}\\
+\pu
+\begin{gather*}
+    \int_2^4 \brackets{x^2\sqrt{16-x^2}}dx;\\
+    \letus x = 4\sin(t),\ dx = 4\cos(t)dt:\\
+    \sqrt{16-x^2} = \sqrt{16 - 16\sin^2(t)} = 4\sqrt{\cos^2(t)};\\
+    \int_{\arcsin{\frac{1}{2}}}^{\arcsin{1}}\brackets{256\sin^2(t)\abs{\cos(t)}\cos(t)}dt = 256\int_{\arcsin{\frac{1}{2}}}^{\arcsin{1}}\brackets{\sin^2(t)\cos^2(t)}dt = \\ = 
+    256 \bigg|_{\arcsin{\frac{1}{2}}}^{\arcsin{1}} \int(\sin^2(t)\cos^2(t))dt = 256 \bigg|_{\arcsin{\frac{1}{2}}}^{\arcsin{1}} \int(\sin^2(t)(1 - \sin^2(t)))dt = \\ = 
+    256 \bigg|_{\arcsin{\frac{1}{2}}}^{\arcsin{1}} \int(\sin^2(t) - \sin^4(t))dt = 256 \bigg|_{\arcsin{\frac{1}{2}}}^{\arcsin{1}} \brackets{\int(\sin^2(t))dt - \int(\sin^4(t))dt} = \\ = \bigg|_{\arcsin{\frac{1}{2}}}^{\arcsin{1}} \brackets{\frac{1}{2}(t - \sin(t))\cos(t) - \frac{1}{32}(12t - 8\sin(2t) + \sin(4t) + C} = \\ = 
+    \bigg|_{\arcsin{\frac{1}{2}}}^{\arcsin{1}} \brackets{\frac{1}{32}(4t - \sin(4t) + C} = 4\sqrt{3} + \frac{32\pi}{3}.
+\end{gather*}
+\pu 
+\begin{gather*}
+    \int_0^{\frac{\pi}{2}}\frac{dx}{4 - \sin(x) - 2\cos(x)};\\
+    \letus t = \tan{\frac{x}{2}},\ dt = \frac{1}{2}dx\sec^2\frac{x}{2}:\\
+    \sin(x) = \frac{2t}{t^2 + 1},\ \cos(x) = \frac{1 - t^2}{t^2 + 1},\ dx = \frac{2dt}{t^2 + 1}:\\
+    \int_0^1\frac{2dt}{(t^2 + 1)\brackets{-\frac{2t}{t^2 + 1} - \frac{2(1 - t^2)}{t^2 + 1} + 4}} = \\ = 
+    \int_0^1\frac{dt}{2(t^2 + 1) - t - 1 + t^2} = \int_0^1\frac{dt}{3t^2 - t + 1} = \int_0^1\frac{dt}{\brackets{\sqrt{3}t - \frac{1}{2\sqrt{3}}}^2 + \frac{11}{12}};\\
+    \letus s = \sqrt{3}t - \frac{1}{2\sqrt{3}},\ ds = \sqrt{3}dt:\\
+    \frac{1}{\sqrt{3}}\int_{-\frac{1}{2\sqrt{3}}}^{\sqrt{3} - \frac{1}{2\sqrt{3}}} \frac{ds}{s^2 -\frac{11}{12}} = \frac{4\sqrt{3}}{11}\int_{-\frac{1}{2\sqrt{3}}}^{\sqrt{3} - \frac{1}{2\sqrt{3}}} \frac{ds}{\frac{12s^2}{11} + 1};\\
+    \letus u = 2\sqrt{\frac{3}{11}}s,\ du = 2\sqrt{\frac{3}{11}}ds:\\
+    \int_{-\frac{1}{11}}^{2\sqrt{\frac{3}{11}}\brackets{\sqrt{3} - \frac{1}{2\sqrt{3}}}} \frac{du}{u^2 + 1} = \bigg|_{-\frac{1}{11}}^{2\sqrt{\frac{3}{11}}\brackets{\sqrt{3} - \frac{1}{2\sqrt{3}}}} \frac{2\arctan{u}}{\sqrt{11}} = \frac{2\arctan(\sqrt{11})}{\sqrt{11}}.
+\end{gather*}
+
+\i \textbf{(2).}\\
+\pu 
+\begin{gather*}
+    \int_0^2 xe^{x/2}dx = \bigg|_0^2 (2xe^{x/2}) - 2\int_0^2 e^{x/2}dx;\\
+    \letus t = x/2,\ dt = \frac{1}{2}dx:\\
+    \bigg|_0^2 (2xe^{x/2}) - 4\int_0^1 e^{t}dt = \bigg|_0^2 (2xe^{x/2}) - 4\bigg|_0^1 e^{t} = 4.
+\end{gather*}
+\pu
+\begin{gather*}
+    \int_0^{\frac{\pi}{2}} (x^2-5x+3)\cos(2x)dx = \\ = 
+    \int_0^{\frac{\pi}{2}} x^2\cos(2x)dx - 5\int_0^{\frac{\pi}{2}} x\cos(2x)dx + 3\int_0^{\frac{\pi}{2}} \cos(2x)dx = \\ = 
+    \bigg|_0^{\frac{\pi}{2}} \frac{1}{2}x^2\sin(2x) - \int_0^{\frac{\pi}{2}} x\sin(2x)dx  - 5\int_0^{\frac{\pi}{2}} x\cos(2x)dx + 3\int_0^{\frac{\pi}{2}} \cos(2x)dx = \\ = 
+    0 + \bigg|_0^{\frac{\pi}{2}} \frac{1}{2}\cos(2x) - \frac{1}{2}\int_0^{\frac{\pi}{2}} \cos(2x)dx - 5\int_0^{\frac{\pi}{2}} x\cos(2x)dx + 3\int_0^{\frac{\pi}{2}} \cos(2x)dx = \\ =
+    -\frac{\pi}{4} - 5\int_0^{\frac{\pi}{2}} x\cos(2x)dx + 3\int_0^{\frac{\pi}{2}} \cos(2x)dx = \\ = 
+    -\frac{\pi}{4} + \bigg|_0^{\frac{\pi}{2}}\brackets{-\frac{5}{2}x\sin(2x)} + \frac{5}{2}\int_0^{\frac{\pi}{2}} \sin(2x)dx + 3\int_0^{\frac{\pi}{2}} \cos(2x)dx = \\ =
+    -\frac{\pi}{4} + \frac{5}{2} + 3\int_0^{\frac{\pi}{2}} \cos(2x)dx;\\
+    \letus t = 2x,\ dt = 2dx:\\
+    -\frac{\pi}{4} + \frac{5}{2} + \frac{3}{2}\int_0^{\pi} \cos(t)dt =  -\frac{\pi}{4} + \frac{5}{2} + \frac{3}{2}\bigg|_0^{\pi} \sin(t) = \frac{5}{2} - \frac{\pi}{4}.
+\end{gather*}
+
+\i \textbf{(1).}\\
+Решение и код на Google Colab по ссылке\\
+\url{https://colab.research.google.com/drive/1omNNOfpcG3AnbiGaKiyKuRT82N2BUNNC?usp=sharing}

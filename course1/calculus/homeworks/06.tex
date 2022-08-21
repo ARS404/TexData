@@ -1,0 +1,35 @@
+\subsubsection{Шестое БДЗ}
+
+\i\textbf{8}\\
+$f(x) = \frac{\sin x}{x},\ x_0 = \frac{\pi}{2}$.\\
+$f(x) = f(x_0) + \frac{f\hatch(x_0)}{1!}(x-x_0) + \frac{f\hatch\hatch(x_0)}{2!}(x-x_0)^2 + \frac{f\hatch\hatch\hatch(x_0)}{3!}(x-x_0)^3 + \oo((x-x_0)^3);$\\
+$f(x) = \frac{2}{\pi} - \frac{4}{\pi^2}(x-\frac{\pi}{2}) + \frac{8-\pi^2}{\pi^3}(x-\frac{\pi}{2})^2 + \frac{2(\pi^2-8)}{\pi^4}(x-\frac{\pi}{2})^3 + \oo((x-\frac{\pi}{2})^3);$
+
+\i\textbf{6}\\
+$f(x) = \cos x,\ x_0 = \frac{\pi}{3};$\\
+$\letus y = x - \frac{\pi}{3},\ y_0 = 0:$\\
+$f(y) = 1 - \frac{1}{2!}y^2 + \frac{1}{4!}y^4 + \ldots + (-1)^{\floor{\frac{n}{2}}}\frac{1}{(2\floor{\frac{n}{2}})!}y^{2\floor{\frac{n}{2}}} + \oo(y^n);$\\
+$f(x) = 1 - \frac{1}{2!}(x-\frac{\pi}{3})^2 + \frac{1}{4!}(x-\frac{\pi}{3})^4 + \ldots + (-1)^{\floor{\frac{n}{2}}}\frac{1}{(2\floor{\frac{n}{2}})!}(x-\frac{\pi}{3})^{2\floor{\frac{n}{2}}} + \oo((x-\frac{\pi}{3})^n);$
+
+
+\i\textbf{1}\\
+Рассмотрим функцию $e^x$, тогда её остаточный член в форме Лагранжа при записи многочлена Тейлора в нуле до $n$-той степени будет иметь вид $\frac{e^c}{(n+1)!}x^{n+1}$. При этом $x = \frac{1}{3}$. Нам хочется, чтобы $\frac{e^c}{(n+1)!}x^{n+1} \leq \frac{e^{\frac{1}{3}}}{(n+1)!}\brackets{\frac{1}{2}}^{n+1} < \frac{4^{\frac{1}{3}}}{(n+1)!}\brackets{\frac{1}{3}}^{n+1}$ было меньше $0{,}001$, что верно, начиная с $n=3$. Значит нам достаточно расписать только первые 4 члена многочлена Лагранжа.\\
+$\sqrt[3]{e} \approx 1 + \frac{1}{1!}\frac{1}{3} + \frac{1}{2!}\brackets{\frac{1}{3}}^2 + \frac{1}{3!}\brackets{\frac{1}{3}}^3 \approx 1{,}39506$.
+
+\i\textbf{1}\\
+\begin{gather*}
+    \limit{x}{0}\frac{e^{\tg x}-x}{\ln(x^2+1)-x^2} = \limit{x}{0} \frac{1}{\ln(x^2+1)-x^2} = \limit{x}{0} \frac{1}{-\frac{x^4}{2} + \frac{x^6}{3} + \ldots + (-1)^{n+1}\frac{x^{2n}}{n} + \ldots} = \\
+    = \limit{x}{0}\frac{1}{-0} = -\infty;
+\end{gather*}
+
+\i\textbf{8}\\
+\pu $f(x) = \frac{e^{3x-5}}{3x-5}$. Числитель всегда больше нуля, поэтому функция не имеет нулей, $\frac{5}{3}$ "--- точка разрыва. $f\hatch(x) = \frac{9e^{3x-5}(x-2)}{(3x-5)^2}$. Ноль первой производной "--- $x=2$. $f\hatch\hatch(x) = \frac{9e^{3x-5}(9x^2-36x+37)}{(3x-5)^3}$. Вторая производная не имеет нулей. Точка минимума "--- $(2, e)$, точка разрыва "--- $x=\frac{5}{3}$, при этом $\limit{x}{\frac{5}{3}-}=-\infty$, $\limit{x}{\frac{5}{3}+} = +\infty$. Тогда построим график.
+
+\input{course1/calculus/homeworks/some data/06.8.a}
+
+\newpage
+\makeFit
+\pu $f(x) = \frac{x^2+4x+8}{x+2}$. Числитель больше нуля, поэтому функция не имеет нулей, $x=-2$ "---  точка разрыва. $f\hatch(x) = \frac{x(x+4)}{(x+2)^2}$, нули производной "--- $x = 0$ и $x = -4$. $f\hatch\hatch(x) = \frac{8}{(x+2)^3}$, вторая производная не имеет нулей. Тогда точки экстремума функции "--- $(0, 4)$ (минимум) и $(-4, -4)$ (максимум). Также функция имеет ассимптоту $y = x + 2$. $\limit{x}{-2-} = -\infty$ и $\limit{x}{-2+} = +\infty$. Тогда построим график.\\
+*К сожалению, геогебра отказывалась импортировать гиперболу в Tikz, поэтому мне пришлось рисовать от руки (я очень старался).
+
+\includegraphics[scale=0.75]{course1/calculus/homeworks/some data/06.8.b.png}

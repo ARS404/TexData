@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+
+\usepackage{packages}
+\usepackage{environments}
+\usepackage{commands}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------------------------------------------
+\setcounter{secnumdepth}{0} % --- отключение отображение индексов формул
+%-----------------------------------------------
+\def\baselinestretch{1.03}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcounter{iii}\setcounter{iii}{0}
+\def\iotst#1{\par \smallskip \mbox{}\refstepcounter{iii}\hspace*{#1}\textbf{\arabic{iii}.}}
+\newcounter{pun}[iii]
+\def\ob{\setcounter{iii}{0}}
+
+\def\pu{\refstepcounter{pun}{\ %\hspace{1.6mm} 
+\bf(\alph{pun})}\ }
+\def\puh{\refstepcounter{pun}{\ %\hspace{1.6mm} 
+\bf(\alph{pun}*)}\ }
+
+\def\i{\hspace{7pt  }\par\smallskip\refstepcounter{iii}\hspace{-3.3mm}\textbf{\arabic{iii}.} }
+\def\ih{\par\smallskip\refstepcounter{iii}\hspace{-3.3mm}\textbf{\arabic{iii}*.} }
+\def\iik{\par\refstepcounter{iii}\textbf{\arabic{iii}.} }
+\def\ino{\par\smallskip\refstepcounter{iii}\nonote\textbf{\arabic{iii}.} }
+\def\iplus{\par\smallskip\refstepcounter{iii}\plusnote\textbf{\arabic{iii}.} }
+\def\iminus{\par\smallskip\refstepcounter{iii}\minusnote\textbf{\arabic{iii}.} }
+\def\istat#1#2{\par\smallskip\refstepcounter{iii}\statnote{#1}{#2}\textbf{\arabic{iii}.} }
+\def\Pu{\par \smallskip
+\mbox{}\refstepcounter{pun}{\phantom{\textbf{\arabic{iii}.}}\hspace{2mm}\bf(\alph{pun})}\ }
+\def\Puno{\par \smallskip \mbox{}\refstepcounter{pun}{\phantom{\textbf{\arabic{iii}.}}\nonotep\hspace{2mm}\bf(\alph{pun})}\ }
+\def\Puplus{\par \smallskip \mbox{}\refstepcounter{pun}{\phantom{\textbf{\arabic{iii}.}}\plusnotep\hspace{2mm}\bf(\alph{pun})}\ }
+\def\Puminus{\par \smallskip \mbox{}\refstepcounter{pun}{\phantom{\textbf{\arabic{iii}.}}\minusnotep\hspace{2mm}\bf(\alph{pun})}\ }
+\def\Pustat#1#2{\par\smallskip\mbox{}\refstepcounter{pun}{\phantom{\textbf{\arabic{iii}.}}\statnotep{#1}{#2}\hspace{2mm}\bf(\alph{pun})}\ }
+\def\za#1{\smallskip \hspace*{0mm}{\bf #1} }
+\def\zano#1{\smallskip \nonote\hspace*{0mm}{\bf #1} }
+\def\zaplus#1{\smallskip \plusnote\hspace*{0mm}{\bf #1} }
+\def\zaminus#1{\smallskip \minusnote\hspace*{0mm}{\bf #1} }
+\def\zastat#1#2#3{\smallskip \statnote{#1}{#2}\hspace*{0mm}{\bf #3} }
+
+
+\begin{document}
+
+	\makeFit
+
+	\title{Домашки ФКН}
+	\author{Арсений}
+	\date{2021 --- 2022}
+	
+	\maketitle
+	\tableofcontents
+
+	\newpage
+	\input{renderAll}
+
+\end{document}
