@@ -284,3 +284,7 @@ Plotting/
 
 # Ignore compiled file
 # main.pdf
+
+# Ignore SSH keys
+.sshForGithub
+.sshForGithub.pub
