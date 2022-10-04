@@ -18,7 +18,6 @@
     \[\forall x \in X \ P(\xi = x) = \frac{1}{N}\] 
 \end{definition}
 
-
 \begin{definition}[Пуассоновское распределение]
     $\ZZ_+ = \{0, 1, 2, \ldots \}$
     \[P(\xi = k) = \frac{\lambda^k}{k!}e^{-\lambda}\]
@@ -57,7 +56,7 @@
             \item Линейность (очевидно);
             \item Сохранение отношения порядка. \[\xi(\omega) \leq \eta(\omega) => E\xi \leq E\eta;\]
             \item $\abs{E\xi} \leq E\abs{\xi}$;
-            \item Пусть $A$ --- множество всех значений $\xi$, тогда \[E\xi = \sum a \cdot P(\xi=a);\]
+            \item Пусть $A$ --- множество всех значений $\xi$, тогда \[E\xi = \sum_{a \in A} a \cdot P(\xi=a);\]
             \item Для произвольной функции из $\RR$ в $\RR$ то: \[Ef(\xi) = \sum f(a) \cdot P(\xi=f(a));\]
             \item Если случайная величина не случайна, то, очевидно, математическое ожидание равно величине;
             \item Если $\xi \geq 0 \And E\xi = 0 => P(\xi=0)=1$;
