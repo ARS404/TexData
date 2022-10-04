@@ -1,0 +1,99 @@
+\subsection{Лекция третья}
+
+\begin{definition}[распределение Бернулли]
+    \[p={(\xi=1)=p} \\
+    P(\xi = 0)=1-p\ (=q) \\
+    \xi \sim BERN(p)\]
+    Смысл --- распределение индикатора
+\end{definition}
+
+\begin{definition}[Биномиальное распределение]
+    $\Omega = \{0, 1, 2, \ldots, n\}$
+    \[P(\xi = k) = \binom{n}{k}p^k(1-p)^{n-k},\ p \in [0, 1]\]
+    Обозначение --- $\xi \sim BIN(n, p)$
+\end{definition}
+
+\begin{definition}[Равномерное распределение]
+    $X$ --- множество $\abs{X} = N$
+    \[\forall x \in X \ P(\xi = x) = \frac{1}{N}\] 
+\end{definition}
+
+\begin{definition}[Пуассоновское распределение]
+    $\ZZ_+ = \{0, 1, 2, \ldots \}$
+    \[P(\xi = k) = \frac{\lambda^k}{k!}e^{-\lambda}\]
+    Обозначение --- $\xi \sim POIS(\lambda)$\\
+    Модель --- редкие события
+\end{definition}
+
+\begin{definition}[Геометрическое распределение]
+    \[P(\xi = k) = p(1-p)^{k-1},\ p \in [0, 1]\]
+    Обозначение --- $\xi \sim Geom(p)$\\
+    Модель --- первое успех в бесконечной схеме Бернулли 
+\end{definition}
+
+\begin{definition}[Независимость случайных величин]
+    Пусть $\xi$, $\eta$ независимы тогда и только тогда, когда для любого значения $a$ у $\xi$ и $b$ у $\eta$ 
+    \[P(\{\xi=a\} \cap \{\eta=b\}) = P(\xi=a) \cdot P(\eta=b).\]
+
+    \begin{remark}
+        Сейчас и далее вместо $\cap$ пишем запятую.
+    \end{remark}
+    
+    Независимость для нескольких случайных величин 
+    $\letus \xi_i$ --- случайные величины, тогда $\xi_i$независимы в совокупности тогда и только тогда, когда 
+    \[\forall i_1, i_2, \ldots, i_n : P(\xi_i=a_{i_1}^{(1)}, \ldots \xi_n=a_{i_n}^{(n)}) = \prod_{k=1}^n P(\xi_k=a_{i_k}^{(k)}).\]
+
+    События независимы с совокупности тогда и только тогда. когда их индикаторы совокупно независимы.
+\end{definition}
+
+\begin{definition}[Математическое ожидание]
+    \[E\xi = \sum\xi(\omega)P(\omega)\]
+    Если $\Omega$ счётно, то ряд должен сходиться абсолютно.\\ 
+    Смысл --- <<среднее>> взвешенное значение.
+    \begin{theorem}[Свойства математического ожидания]
+        \phantom{asdf}
+        \begin{enumerate}
+            \item Линейность (очевидно);
+            \item Сохранение отношения порядка. \[\xi(\omega) \leq \eta(\omega) => E\xi \leq E\eta;\]
+            \item $\abs{E\xi} \leq E\abs{\xi}$;
+            \item Пусть $A$ --- множество всех значений $\xi$, тогда \[E\xi = \sum_{a \in A} a \cdot P(\xi=a);\]
+            \item Для произвольной функции из $\RR$ в $\RR$ то: \[Ef(\xi) = \sum f(a) \cdot P(\xi=f(a));\]
+            \item Если случайная величина не случайна, то, очевидно, математическое ожидание равно величине;
+            \item Если $\xi \geq 0 \And E\xi = 0 => P(\xi=0)=1$;
+            \item Для независимых величин математическое ожидание мультипликативно.
+        \end{enumerate}
+    \end{theorem}
+\end{definition}
+
+\vspace*{10pt}
+Рассмотрим матеметическое ожидание индикатора события, очевидно, что оно равно вероятности самого события.
+
+В классической модели:
+    \[E\xi = sum_{\omega \in \Omega} \xi(\omega)P(\omega) = \frac{1}{\abs{\Omega}}\sum_{\omega \in \Omega}\xi(\omega)\]
+
+$\xi \sim Bin(n, p)$
+    \[E\xi = \sum_{k=0}^n kP(\xi=k) = np\]
+
+
+\begin{definition}[Дисперсия и ковариация]
+    Пусть $\xi$ --- случайная величина, с математическим ожиданием $E\xi$, тогда дисперсия равна 
+        \[D\xi = E(\xi - E\xi)^2\]
+    Если $\xi$ и $\eta$ --- случайные величины, то их ковариацией называется 
+        \[cov(\xi, \eta) = E(\xi-E\xi)(\eta-E\eta)\]
+    Если ковариация равна нулю, то величины называют некоррелированными, в таком случае дисперсия аддитивна. Если независимы, 
+    то некоррелированны (в обратную сторону не работает)
+\end{definition}
+
+\begin{lemma}[Свойства $D$ и $cov$]
+    \phantom{asdfa}
+    \begin{enumerate}
+        \item Ковариация биленейна;
+        \item $D\xi = cov(\xi, \xi)$;
+        \item $D(c\xi) = c^2D\xi$;
+        \item $D(\xi + c) = D\xi$;
+        \item $D \geq 0$, при этом $D\xi = 0 <=> P(\xi=E\xi)=1$;
+        \item $D\xi = E\xi^2 - \brackets{E\xi}^2$;
+        \item $cov(\xi, \eta) = E\xi\eta - E\xi \cdot E\eta$;
+        \item $D(\xi + \eta) = D\xi + D\eta + 2cov(\xi, \eta)$.
+    \end{enumerate}    
+\end{lemma}
