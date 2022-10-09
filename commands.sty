@@ -125,21 +125,17 @@
     \end{center}
 }
 
-\newcommand{\makeFit}[0]{
+\newcommand{\makeFit}[1]{
 	\pagestyle{fancy}
 	\fancyhf{}
-<<<<<<< HEAD
-	\chead{Отчёт об учеюной практике в ООО <<Яндекс.Технологии>>}
-=======
-	\chead{HSE 21-23 $\bullet$ Homeworks}
->>>>>>> a5aa1e40e9c609bf3a9b8213150c85c34717168d
+	\chead{HSE 21-23 $\bullet$ #1}
 	\rhead{\large\thepage\hspace{15pt}}
 	\renewcommand{\headrulewidth}{0.4pt}
 }
 
-\newcommand{\render}[1]{
+\newcommand{\render}[2]{
 	\setcounter{iii}{0}
-	\makeFit
+	\makeFit{#2}
 	\include{#1}
 }
 
